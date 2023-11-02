@@ -24,25 +24,39 @@ const SingleCountry = () => {
   }, []);
 
   if (!country) {
-    return(
-        <Spinner animation="grow" />
-    );
+    return <Spinner animation="grow" />;
   }
 
   return (
-    <Row>
-        <Col>
-        <Image  src={country.flags.png}/>
-        </Col>
-        <Col>
-        <h1><b>Common Name: </b> {country.name.common}</h1>
-        <h1><b>Official Name: </b> {country.name.official}</h1>
-        <h1><b>Region: </b> {country.region}</h1>
-        <h1><b>Sub-Region: </b> {country.subregion}</h1>
-        <h1><b>National Currency: </b> {Object.values(country.currencies)[0].name}</h1>
-        </Col>
+    <Row className="d-flex justify-content-center">
+      <Col>
+        <h3>
+          <b>Common Name: </b> {country.name.common}
+        </h3>
+        <h3>
+          <b>Official Name: </b> {country.name.official}
+        </h3>
+        <h3>
+          <b>Capital City: </b> {country.capital}
+        </h3>
+        <h3>
+          <b>Region: </b> {country.region}
+        </h3>
+        <h3>
+          <b>Sub-Region: </b> {country.subregion}
+        </h3>
+        <h3>
+          <b>National Currency: </b> {Object.values(country.currencies)[0].name}
+        </h3>
+      </Col>
+      <Col>
+        <Image className="pb-5" src={country.flags.png} />
+        <iframe
+          src={`https://www.google.com/maps/place/${country.name.common}`}
+          title="Country Location"
+        ></iframe>
+      </Col>
     </Row>
-  
   );
 };
 
