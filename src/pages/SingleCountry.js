@@ -51,10 +51,6 @@ const SingleCountry = () => {
       </Col>
       <Col>
         <Image className="pb-5" src={country.flags.png} />
-        <iframe
-          src={`https://www.google.com/maps/place/${country.name.common}`}
-          title="Country Location"
-        ></iframe>
       </Col>
     </Row>
   );

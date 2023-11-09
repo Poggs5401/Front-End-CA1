@@ -15,12 +15,14 @@ const NavBar = (props) => {
         <Col>
           <div className="d-flex gap-3 align-items-center">
             <div>
-              <Image
-                src="https://www.svgrepo.com/show/220165/geolocalization.svg"
-                width={48}
-                height={48}
-                className="img-fluid"
-              />
+              <a href="/">
+                <Image
+                  src="https://www.svgrepo.com/show/220165/geolocalization.svg"
+                  width={48}
+                  height={48}
+                  className="img-fluid"
+                />
+              </a>
             </div>
             <div>
               <h5>World Exploration</h5>
